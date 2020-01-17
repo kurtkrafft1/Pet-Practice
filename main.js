@@ -10,11 +10,19 @@ const pet = {
     bark: function(){
         console.log(`WOOF WOOF says ${this.name}`)
     },
-    play: function(){
-        console.log(`Looks like ${this.name} is trying to play with you!`)
+    'favoriteToys': [],
+    play: function(toy, boo){
+        if (boo === true){
+            console.log(`Awh, looks like ${this.name} really likes the ${toy} toy!`)
+            this.favoriteToys.push(toy);
+        }else {
+            console.log(`Oh, seems that ${this.name} doesn't like the ${toy} toy.`)
+        }
     }
+    
+
 }
 
 pet.bite()
 pet.bark()
-pet.play()
+pet.play('bottle-rocket', true)
